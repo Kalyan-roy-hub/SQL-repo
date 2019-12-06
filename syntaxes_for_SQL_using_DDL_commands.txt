@@ -1,0 +1,34 @@
+sytaxes for SQL using DDL commands:
+-----------------------------------
+1.to create table...
+  -->create table tablename(column-name datatype constraint cnst-name constraint-type);
+2.to add a column to the table..
+  -->alter table table-name add col-name datatype;
+3.to add a constraint to a column..
+  -->alter table table-name modify col-name constraint const-name constraint-type;
+4.to view table structure..
+  -->desc table-name
+5.to change datatype of a column..
+  -->alter table table-name modify (col-name datatype(size),..);
+6.to drop columns from a table..
+  -->alter table table-name drop column col-name;
+  -->alter table table-name drop(col1,col2-names..);
+** we cannot drop all the columns from a table..
+7.to drop a table..
+  -->drop table table-name;
+8.to undo a drop of a table..
+  -->flashback table table-name to before drop;
+9.to permenantly drop a table..
+  -->drop table table-name purge;
+** when we drop a table using purge command it cannot be undone by flashback command..
+10.to drop a single table from recyclebin..
+  -->purge table table-name;
+11.to drop all the tables from the recyclebin..
+  -->purge recyclebin;
+12.to delete data from all the rows of a table..
+  -->truncate table-name;
+13.to rename a table..
+  -->rename table-name to new-table-name;
+14.to rename a column in a table..
+  -->alter table table-name rename col-name to new-col-name;
+ 

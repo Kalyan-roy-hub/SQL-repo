@@ -1,0 +1,31 @@
+DDL(Date definition language)
+-----------------------------
+create
+alter
+drop
+truncate
+rename
+flashback
+purge
+comment
+
+DML(Data manipulation language)
+-------------------------------
+select
+insert
+update
+delete
+merge
+
+TCL(Transaction control language)
+---------------------------------
+commit
+rollback
+savepoint
+set transaction
+
+DCL(Data control language)
+--------------------------
+grant
+revoke
+set role
