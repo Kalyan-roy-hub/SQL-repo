@@ -1,0 +1,31 @@
+syntaxes for SQL using DML commands:
+------------------------------------
+here i am usin a table(first) which looks like
+
+       SNO NAME                 CITY                     PH_NUM
+---------- -------------------- -------------------- ----------
+         1 Murali               Vizag                9492453799
+         2 Roy                  Hyd                  9059660655
+
+
+1.to insert data into a table..
+ -->insert into first values(2,'Roy','Hyd',9059660655);
+
+
+ --> insert into first values(&sno,'&name','&city',&ph_num);
+     Enter value for sno: 3
+     Enter value for name: suman
+     Enter value for city: chennai
+     Enter value for ph_num: 8919809253
+     old   1: insert into first values(&sno,'&name','&city',&ph_num)
+     new   1: insert into first values(3,'suman','chennai',8919809253)
+ --> insert into first(sno,name,city,ph_num) values(4,'Raj','banglore',9517538246);
+2.to change the existing data in a table..
+ --> update first set name='Ravi' where name='suman';
+ --> update first set city = 'Mumbai' where name ='Ravi';
+3.to delete a table..
+ --> delete from first;
+4.to delete particular rows of a table..
+ --> delete from first where name = 'Ravi';
+5.to undo the delete..
+ --> rollback;
