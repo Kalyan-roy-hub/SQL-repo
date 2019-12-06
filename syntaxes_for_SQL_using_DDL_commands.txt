@@ -1,4 +1,4 @@
-sytaxes for SQL using DDL commands:
+syntaxes for SQL using DDL commands:
 -----------------------------------
 1.to create table...
   -->create table tablename(column-name datatype constraint cnst-name constraint-type);
