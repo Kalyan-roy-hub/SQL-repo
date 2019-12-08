@@ -1,0 +1,135 @@
+
+SQL> select ename from emp_info order by ename;
+
+ENAME
+--------------------
+Paul
+Radha
+Raj
+Ramesh
+Roy
+Samar
+Sandy
+Sindhu
+
+
+9 rows selected.
+
+SQL> select ename from emp_info order by ename desc;
+
+ENAME
+--------------------
+
+Sindhu
+Sandy
+Samar
+Roy
+Ramesh
+Raj
+Radha
+Paul
+
+9 rows selected.
+
+SQL> select eid,ename esal,desg from emp_info order by esal;
+
+       EID ESAL                 DESG
+---------- -------------------- --------------------
+       107 Paul                 salesman
+       106 Radha                dev
+       101 Raj                  dev
+       105 Ramesh               testing
+       100 Roy                  manager
+       104 Samar                dev
+       103 Sandy                dev
+       102 Sindhu               dev
+
+
+9 rows selected.
+
+SQL> select eid,ename,esal,desg from emp_info order by esal;
+select eid,ename,esal,desg from emp_info order by esal
+                 *
+ERROR at line 1:
+ORA-00904: "ESAL": invalid identifier
+
+
+SQL> desc emo_info
+ERROR:
+ORA-04043: object emo_info does not exist
+
+
+SQL> desc emp_info
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ------------
+
+ EID                                                NUMBER(4)
+ ENAME                                              VARCHAR2(20)
+ SAL                                                NUMBER(6)
+ JDATE                                              DATE
+ DESG                                               VARCHAR2(20)
+ GENDER                                             CHAR(1)
+ BONUS                                              NUMBER(4)
+ COMSN                                              NUMBER(4)
+
+SQL> select eid,ename,sal,desg from emp_info order by sal;
+
+       EID ENAME                       SAL DESG
+---------- -------------------- ---------- --------------------
+       107 Paul                       8000 salesman
+       105 Ramesh                    18000 testing
+       102 Sindhu                    21000 dev
+       106 Radha                     22500 dev
+       104 Samar                     24000 dev
+       101 Raj                       25000 dev
+       103 Sandy                     31000 dev
+       100 Roy                       64000 manager
+
+
+SQL> select ename,sal from emp_info order by sal,ename;
+
+ENAME                       SAL
+-------------------- ----------
+Paul                       8000
+Ramesh                    18000
+Sindhu                    21000
+Radha                     22500
+Samar                     24000
+Raj                       25000
+Sandy                     31000
+Roy                       64000
+
+
+9 rows selected.
+
+SQL> select ename,sal from emp_info order by ename,sal;
+
+ENAME                       SAL
+-------------------- ----------
+Paul                       8000
+Radha                     22500
+Raj                       25000
+Ramesh                    18000
+Roy                       64000
+Samar                     24000
+Sandy                     31000
+Sindhu                    21000
+
+
+
+Q] GET EMPLOYEE DATA BASED ON DESIGNATION ORDER AND FROM
+    EACH DESIGNATION LOWEST SALARIED PERSON TO HIGHEST ONE ?
+
+SQL> select desg,ename,sal from emp_info order by desg,sal;
+
+DESG                 ENAME                       SAL
+-------------------- -------------------- ----------
+dev                  Sindhu                    21000
+dev                  Radha                     22500
+dev                  Samar                     24000
+dev                  Raj                       25000
+dev                  Sandy                     31000
+manager              Roy                       64000
+salesman             Paul                       8000
+testing              Ramesh                    18000
+

@@ -1,0 +1,50 @@
+SQL> select *from departments;
+
+     DEPID DEPNAME              CITY
+---------- -------------------- --------------------
+        10 Production           Dallas
+        10 Production           Dallas
+        10 Production           Dallas
+        10 Production           Dallas
+        10 Production           Dallas
+        10 Production           Dallas
+        20 Sales                Texas
+        20 Sales                Texas
+        20 Sales                Texas
+        20 Sales                Texas
+        20 Sales                Texas
+
+     DEPID DEPNAME              CITY
+---------- -------------------- --------------------
+        30 Finance              Chicago
+        30 Finance              Chicago
+        30 Finance              Chicago
+        30 Finance              Chicago
+        30 Finance              Chicago
+
+16 rows selected.
+
+SQL> select distinct depname from departments;
+
+DEPNAME
+--------------------
+Production
+Sales
+Finance
+
+SQL> select distinct depname,city from departments;
+
+DEPNAME              CITY
+-------------------- --------------------
+Sales                Texas
+Finance              Chicago
+Production           Dallas
+
+SQL> select distinct * from departments
+  2  ;
+
+     DEPID DEPNAME              CITY
+---------- -------------------- --------------------
+        30 Finance              Chicago
+        20 Sales                Texas
+        10 Production           Dallas
