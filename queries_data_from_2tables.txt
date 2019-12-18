@@ -1,0 +1,122 @@
+SQL> select ename,salary from employee_tab,employee_sal_chart
+  2  where employee_tab.emp_id = employee_sal_chart.emp_id ;
+
+ENAME                    SALARY
+-------------------- ----------
+roy                       20000
+smit                      20000
+sam                       20000
+murf                      20000
+bill                      20000
+smog                      20000
+stu                       20000
+mel                       20000
+waugh                     20000
+bar                       20000
+buz                       18000
+
+ENAME                    SALARY
+-------------------- ----------
+wayn                      18000
+wu                        18000
+joe                       18000
+desh                      18000
+pan                       18000
+harp                      18000
+haz                       18000
+ken                       18000
+len                       18000
+bum                       16000
+brad                      16000
+
+ENAME                    SALARY
+-------------------- ----------
+jone                      16000
+will                      16000
+dreza                     16000
+sand                      16000
+mart                      16000
+amar                      16000
+martin                    16000
+nappi                     16000
+ford                      15000
+nick                      15000
+kro                       15000
+
+ENAME                    SALARY
+-------------------- ----------
+wayne                     15000
+bro                       15000
+fen                       15000
+pit                       15000
+pat                       15000
+will                      15000
+koli                      15000
+pratap                    15500
+palak                     15500
+chit                      15500
+syam                      15500
+
+ENAME                    SALARY
+-------------------- ----------
+maja                      15500
+maya                      15500
+jose                      15500
+rose                      15500
+rise                      15500
+tend                      15500
+
+50 rows selected.
+
+
+SQL> select ename,salary from employee_tab,employee_sal_chart where employee_tab
+.emp_id = employee_sal_chart.emp_id and salary >18000;
+
+ENAME                    SALARY
+-------------------- ----------
+roy                       20000
+smit                      20000
+sam                       20000
+murf                      20000
+bill                      20000
+smog                      20000
+stu                       20000
+mel                       20000
+waugh                     20000
+bar                       20000
+
+10 rows selected.
+
+
+SQL> select ename,salary*12 as annual_sal from employee_tab,employee_sal_chart w
+here employee_tab.emp_id = employee_sal_chart.emp_id and salary < 16000 ;
+
+ENAME                ANNUAL_SAL
+-------------------- ----------
+ford                     180000
+nick                     180000
+kro                      180000
+wayne                    180000
+bro                      180000
+fen                      180000
+pit                      180000
+pat                      180000
+will                     180000
+koli                     180000
+pratap                   186000
+
+ENAME                ANNUAL_SAL
+-------------------- ----------
+palak                    186000
+chit                     186000
+syam                     186000
+maja                     186000
+maya                     186000
+jose                     186000
+rose                     186000
+rise                     186000
+tend                     186000
+
+20 rows selected.
+
+

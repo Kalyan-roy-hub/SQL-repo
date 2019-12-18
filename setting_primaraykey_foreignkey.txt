@@ -1,0 +1,42 @@
+
+**commands for setting a primary key ta a table**
+--------------------------------------------------
+SQL> desc employee_tab
+ Name                                      Null?    Type
+ ----------------------------------------- -------- -----------------------
+
+ EMP_ID                                             NUMBER(20)
+ FATHER_NAME                                        VARCHAR2(20)
+ MOBILE_NUM                                         NUMBER(10)
+ JOIN_DATE                                          DATE
+
+SQL> alter table employee_tab add constraint emptab_pk primary key(emp_id);
+
+Table altered.
+
+
+--------------------------------------------------
+**commands for setting a foreign key ta a table**
+--------------------------------------------------
+
+SQL> desc employee_tab
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+
+ EMP_ID                                    NOT NULL NUMBER(20)
+ FATHER_NAME                                        VARCHAR2(20)
+ MOBILE_NUM                                         NUMBER(10)
+ JOIN_DATE                                          DATE
+
+SQL> desc employee_sal_chart
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+
+ EMP_ID                                             NUMBER(10)
+ SAL_DATE                                           DATE
+ SALARY                                             NUMBER(7,2)
+
+SQL> alter table employee_sal_chart add constraint fk_sal_chart foreign key(emp_
+id) references employee_tab(emp_id);
+
+Table altered.
